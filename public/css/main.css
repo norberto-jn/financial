@@ -1,0 +1,138 @@
+:root{
+    --color-primary:tomato;
+}
+
+.l-table{
+    width: 100%;
+    margin-top: 2%;
+    border: solid 1px;
+}
+
+.c-header{
+    height: 3rem;
+    text-align: center;
+    background:var(--color-primary);
+}
+
+.l-header-tr,.l-tbody-tr{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.l-header-tr .c-header-th{
+    width: 25%;
+    margin:1% 0 1% 0;
+    box-sizing: border-box;
+}
+
+.l-tbody-tr .c-tbody-td{
+    width: 25%;
+    border: solid 1px;
+    box-sizing: border-box;
+}
+
+.l-tbody-tr .c-btn-update,.c-btn-delete{
+    width: 100% !important;
+    margin: 4% 0 4% 0;
+}
+
+th{
+    height: 2rem;
+}
+
+td{
+    text-align: center;
+    border: 1px solid
+}
+
+.c-update-product{
+    width:90%;
+    height: 2rem;
+    border: none;
+    text-align: center;
+    outline: none;
+}
+
+.l-save-product{
+    width: 95%;
+    margin-top: 5%;
+    display: none;
+}
+
+.l-save-product .c-input-save{
+    width: 100%;
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+.l-save-product .c-btn-save{
+    width: 20%;
+}
+
+.home .c-btn-add{
+    width: 3rem;
+    height: 3rem;
+    left: 1rem;
+    margin: 5% 5% 5% 0%;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+}
+
+.c-btn-add{
+    border-radius: 100%;
+    background-color:var(--color-primary);
+    color: white;
+    float: right;
+}
+
+.c-btn-add::before{
+    content: '+';
+}
+
+@media screen and (min-width:1440px) {
+
+}
+
+@media screen and (min-width:1280px) {
+
+    .l-header-tr .c-header-th{
+        width: 16.62% !important;
+    }
+
+    .l-tbody-tr .c-tbody-td{
+        width: 16.62% !important;
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+    .home .c-btn-add{
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    .l-table{
+        margin-top: 10%;
+        border: none;
+    }
+
+    .l-header-tr .c-header-th{
+        width: 16.60%;
+    }
+
+    .l-tbody-tr .c-tbody-td{
+        width: 16.60%;
+    }
+
+    .l-tbody-tr .c-btn-update,.c-btn-delete{
+        width: 16.60% !important;
+        margin-top: 0%;
+        margin-bottom:0%;
+        border: 1px solid;
+    }
+
+    .c-update-product{
+        width:98%;
+    }
+}
