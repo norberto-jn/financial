@@ -16,7 +16,7 @@
         </div>
         <div class="l-tbody">
             @foreach ($financialPlayersModel as $data )
-            <form action="/players/update" method="POST"  onsubmit="return formatMoney('money-{{$data->id}}')">
+            <form action="/players/update" method="POST">
                 @csrf
                 <input type="number" name="playersId" value="{{$data->id}}" style="display: none" />
                 <div  class="l-tbody-tr">

@@ -68,6 +68,10 @@ td{
 
 .l-save-product .c-btn-save{
     width: 20%;
+    color: white;
+    border: none;
+    background-color: #198754;
+    border-radius: 10px;
 }
 
 .home .c-btn-add{
