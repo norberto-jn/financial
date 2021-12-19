@@ -6,8 +6,14 @@ function show(id){
 
 function formatMoney(id){
     Item=document.getElementById(id)
-    result=Item.value.toString().split(" ")
-    Item.value=Item.value.toString().replace(',','.')
-    console.log(result)
-    return false
+    money=Item.value.toLocaleString().split('');
+    money.map((item,index)=>{
+        if(item==',')
+         money[index]='.'
+        if(item=='.')
+         money[index]=' '
+    })
+
+    Item.value=money.join(' ').replace(/\s/g, '')
+    return true
 }

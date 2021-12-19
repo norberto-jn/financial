@@ -13,7 +13,6 @@ class FinancialController extends Controller
 
     public function index()
     {
-        // Lista os dados da tabela
         $financialModel = Financial::all();
         $financialPlayersModel=FinancialPlayers::all();
         $laborValueModel=LaborValue::all();
@@ -31,14 +30,11 @@ class FinancialController extends Controller
 
     public function create()
     {
-        //Retorna a View para criar um item da tabela
 
     }
 
     public function store(Request $request)
     {
-        //Salva o novo item na tabela
-
         $amount=$request->amount;
         $product=$request->product;
         $money=(double)$request->money;
@@ -59,17 +55,16 @@ class FinancialController extends Controller
 
     public function show(Financial $financial)
     {
-        //Mostra um item específco
+
     }
 
     public function edit(Financial $financial)
     {
-        //Retorna a View para edição do dado
+
     }
 
     public function update(Request $request, Financial $financial)
     {
-        //Salva a atualização do dado
         $request->validate([
             'amount'=>'required',
             'product'=>'required',
@@ -81,7 +76,7 @@ class FinancialController extends Controller
             "amount"=>$request->amount,
             "product"=>$request->product,
             "money"=>$request->money,
-            "total"=>(double)($request->amount*$request->money),
+            "total"=>($request->amount*$request->money),
         ]);
 
         return redirect("/");

@@ -16,7 +16,7 @@
         </div>
         <div class="l-tbody">
             @foreach ($financialPlayersModel as $data )
-            <form action="/players/update" method="POST">
+            <form action="/players/update" method="POST" onsubmit="return formatMoney('money-{{$data->id}}')">
                 @csrf
                 <input type="number" name="playersId" value="{{$data->id}}" style="display: none" />
                 <div  class="l-tbody-tr">
@@ -63,16 +63,16 @@
     </div>
 
     <div class="l-save-product" id="players">
-       <form action="/players/save" method="POST">
+       <form action="/players/save" method="POST" onsubmit="return formatMoney('players-money')">
             @csrf
             <div>
-                <input type="number" name="playersAmount" class="c-input-save" id="">
+                <input type="number" name="playersAmount" class="c-input-save" id="" placeholder="Informe aqui a quantidade do produto"/>
             </div>
             <div>
-                <input type="text" name="playersProduct" class="c-input-save" id="">
+                <input type="text" name="playersProduct" class="c-input-save" id=""  placeholder="Informe aqui o nome do produto"/>
             </div>
             <div>
-                <input type="text" name="playersMoney" class="c-input-save" id="">
+                <input type="text" name="playersMoney" class="c-input-save" id="players-money"  placeholder="Informe aqui o preço do produto"/>
             </div>
             <div>
                 <input type="submit" class="c-input-save c-btn-save" value="salvar">

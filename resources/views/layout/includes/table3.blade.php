@@ -10,13 +10,13 @@
         </thead>
         <tbody>
             @foreach ($laborValueModel as $data )
-            <form action="/update" method="POST">
+            <form action="/labor-value/update" method="POST" onsubmit="return formatMoney('laborValueModel-money-{{$data->id}}')">
                 @csrf
                 <input type="number" name="laborValueId" value="{{$data->id}}" style="display: none" />
                 <tr>
                     <td>
                         R$
-                        <input type="text" name='laborValueTotal' value="{{number_format($data->labor_values, 2, ',', '.')}}" class="c-update-product" readonly />
+                        <input type="text" name='laborValueTotal' value="{{number_format($data->labor_values, 2, ',', '.')}}" class="c-update-product" id="laborValueModel-money-{{$data->id}}"/>
                     </td>
                     <td>
                         <input type="submit" value="salvar" />
@@ -34,13 +34,13 @@
           </svg>
     </div>
     <div class="l-save-product" id="orcamento">
-       <form action="/labor-value/save" method="POST">
+       <form action="/labor-value/save" method="POST" onsubmit="return formatMoney('laborValueModel-money')">
             @csrf
             <div>
                 <input type="number" name="laborValueId" class="c-input-save" id="" style="display: none;">
             </div>
             <div>
-                <input type="text" name="laborValueTotal" class="c-input-save" id="">
+                <input type="text" name="laborValueTotal" class="c-input-save" id="laborValueModel-money">
             </div>
             <div>
                 <input type="submit" class="c-input-save c-btn-save" value="salvar">
